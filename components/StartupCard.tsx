@@ -2,8 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { EyeIcon } from "lucide-react";
 
+import { Author, Startup } from "@/sanity/types";
+
 import { formatDate } from "@/lib/utils";
 import { Button } from "./ui/button";
+
+export type StartupCardType = Omit<Startup, 'author'> & {author?: Author}
 
 export default function StartupCard({ post }: { post: StartupCardType }) {
   const {
