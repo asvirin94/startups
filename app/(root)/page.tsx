@@ -12,7 +12,7 @@ export default async function Home({
 }) {
   const { query } = await searchParams;
 
-  const posts = await client.fetch(STARTUPS_QUERY, {search: query || null})
+  const posts = await client.withConfig({useCdn: false}).fetch(STARTUPS_QUERY, {search: query || null})
 
   return (
     <>
